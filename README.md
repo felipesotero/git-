@@ -148,4 +148,51 @@ Date:   Thu Oct 27 13:40:09 2016 -0300
 * 3397a27 First commit
 ```
 
+#### $ git blame
+Manual: https://git-scm.com/docs/git-blame
+Shows who, when and where (in which commit) the current state of a file was modified.
+
+When commiting is done right, this command, allied with `git show` is great to understand why certain changes were made or bugs introduced.
+
+Examples:
+```shell
+╰─$ git blame README.md
+
+[..]
+f3d79c57 (Luiz Sotero 2016-10-27 14:45:35 -0300 149) ```
+f3d79c57 (Luiz Sotero 2016-10-27 14:45:35 -0300 150)
+cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 151) #### git error
+cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 152) This is no command at all! ERROR! ERROR!
+cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 153)
+cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 154)
+ddb452e2 (Luiz Sotero 2016-10-27 13:33:10 -0300 155) ### Guidelines and best practices
+[..]
+```
+
+- Use `git show` to understand better why someone added the code lines contained in commit cea8273f
+
+```shell
+╰─$ git show cea8273f
+
+commit cea8273fc9ad9a3eb43ab2fe4b3b3908f59c3f76
+Author: Luiz Sotero <luizsotero@gmail.com>
+Date:   Thu Oct 27 15:11:11 2016 -0300
+
+    crappy commit with error
+
+diff --git a/README.md b/README.md
+index 39651ed..dfc0bd2 100644
+--- a/README.md
++++ b/README.md
+@@ -148,4 +148,8 @@ Date:   Thu Oct 27 13:40:09 2016 -0300
+ * 3397a27 First commit
+ ```
+
++#### git error
++This is no command at all! ERROR! ERROR!
++
++
+ ### Guidelines and best practices
+```
+
 ### Guidelines and best practices
