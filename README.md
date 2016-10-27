@@ -81,4 +81,14 @@ index 8fbb413..d578080 100644
  Shows a comparison of two different revisions. Can be used on a file, branch or two different pointers, such as branches or commits.
 ```
 
+```shell
+╰─$ git diff HEAD..HEAD^
+
+diff --git a/README.md b/README.md
+index ca9cf6a..8fbb413 100644
+--- a/README.md
++++ b/README.md
+@@ -59,26 +59,46 @@ [..] DESCRIPTION REMOVED FOR READABILITY IMPROVEMENT
+```
+
 ### Guidelines and best practices
