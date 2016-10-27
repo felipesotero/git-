@@ -1,7 +1,20 @@
 # Semantic Git
 ## How to Git++
 
-### Git commands
+### Git command list
+
+1. [git show](#git-show)
+2. [git status](#git-status)
+3. [git diff](#git-diff)
+4. [git log](#git-log)
+5. [git blame](#git-blame)
+6. [git cherry-pick](#git-cherry-pick)
+7. [git stash](#git-stash)
+8. [git reset](#git-reset)
+9. [git rebase](#git-rebase)
+10. [git reflog](#git-reflog)
+11. [git bisect](#git-bisect)
+12. [git revert](#git-revert)
 
 #### $ git show
 
@@ -45,3 +58,47 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+### $ git diff
+
+Shows a comparison of two different revisions. Can be used on a file, branch or two different pointers, such as branches or commits.
+
+Examples:
+```shell
+╰─$ git diff
+
+diff --git a/README.md b/README.md
+index 6653627..8c1ebe2 100644
+--- a/README.md
++++ b/README.md
+@@ -1,7 +1,20 @@
+ # Semantic Git
+ ## How to Git++
+
+-### Git commands
++### Git command list
++
++1. [git show](#git-show)
++2. [git status](#git-status)
++3. [git diff](#git-diff)
++4. [git log](#git-log)
++5. [git blame](#git-blame)
++6. [git cherry-pick](#git-cherry-pick)
++7. [git stash](#git-stash)
++8. [git reset](#git-reset)
++9. [git rebase](#git-rebase)
++10. [git reflog](#git-reflog)
++11. [git bisect](#git-bisect)
++12. [git revert](#git-revert)
+
+ #### $ git show
+
+@@ -45,3 +58,5 @@ Changes not staged for commit:
+
+ no changes added to commit (use "git add" and/or "git commit -a")
+ ```
++
++### Guidelines and best practices
+```
+
+### Guidelines and best practices
