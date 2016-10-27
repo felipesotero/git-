@@ -101,4 +101,51 @@ index e58b934..a3ff1df 100644
 @@ -3,28 +3,19 @@ [..] DESCRIPTION REMOVED FOR READABILITY IMPROVEMENT
 ```
 
+#### $ git log
+
+Manual: https://git-scm.com/docs/git-log
+Show a list of commits with their descriptions in ancestor order
+
+Examples:
+```shell
+╰─$ git log
+
+commit 97ebd4274b9f3aa44538a20f0e7e26b61e4bd6a9
+Author: Luiz Sotero <luizsotero@gmail.com>
+Date:   Thu Oct 27 14:20:34 2016 -0300
+
+    Add git diff example with two branches
+
+commit 9efed07fc9e9c188090c8b2563a5e138b0d7d701
+Merge: a25f4d8 ef36afa
+Author: Luiz Sotero <luizsotero@gmail.com>
+Date:   Thu Oct 27 13:40:09 2016 -0300
+
+    Merge branch 'git_diff'
+[..]
+```
+
+```shell
+╰─$ git log --graph --oneline --decorate --all
+
+* 97ebd42 (HEAD -> git_diff_branches) Add git diff example with two branches
+*   9efed07 (master) Merge branch 'git_diff'
+|\
+| * ef36afa (git_diff) Add pointer..pointer git diff example
+|/
+* a25f4d8 Fix title header level and make the git diff example smaller
+* ddb452e Add command list and first specification for git diff with one big example
+*   0941896 Merge branch 'git_status'
+|\
+| * c5e81d4 (git_status) Add git status command information and example
+* |   6b2a5ec Merge branch 'git_show'
+|\ \
+| |/
+|/|
+| * 0cbc622 (git_show) Add git show command description
+* | 56688bd Add Git commands title
+|/
+* 3397a27 First commit
+```
+
 ### Guidelines and best practices
