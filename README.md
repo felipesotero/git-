@@ -195,4 +195,13 @@ index 39651ed..dfc0bd2 100644
  ### Guidelines and best practices
 ```
 
+#### $ git cherry-pick
+Manual: https://git-scm.com/docs/git-cherry-pick
+Create new commits for every commit cherry-picked with the same changes. ** Important: this will create new commit hashes **
+
+Examples:
+
+```shell
+╰─$ git cherry-pick
+```
 ### Guidelines and best practices
