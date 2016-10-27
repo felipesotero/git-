@@ -91,4 +91,14 @@ index ca9cf6a..8fbb413 100644
 @@ -59,26 +59,46 @@ [..] DESCRIPTION REMOVED FOR READABILITY IMPROVEMENT
 ```
 
+```shell
+╰─$ git diff git_show..git_status
+
+diff --git a/README.md b/README.md
+index e58b934..a3ff1df 100644
+--- a/README.md
++++ b/README.md
+@@ -3,28 +3,19 @@ [..] DESCRIPTION REMOVED FOR READABILITY IMPROVEMENT
+```
+
 ### Guidelines and best practices
