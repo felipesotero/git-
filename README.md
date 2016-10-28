@@ -195,6 +195,42 @@ index 39651ed..dfc0bd2 100644
  ### Guidelines and best practices
 ```
 
+#### $ git reset
+Manual: https://git-scm.com/docs/git-reset
+Reset the current HEAD pointer to a specified state
+
+Used with `--hard` can make the branch move the HEAD pointer to any step in the tree ignoring the changes between states.
+
+Examples:
+
+```shell
+╰─$ git log --graph --oneline --decorate --all
+*   6b9564d (HEAD -> git_reset, master) Merge branch 'git_cherry'
+|\
+| * cfd80fc (git_cherry) Add second cherry-pick example with commit range
+| * 25ba63f Add better description to git cherry-pick command telling about the most common case
+| * c03812f Add git cherry-pick command with incomplete example
+|/
+*   d1eac7d Merge branch 'git_blame'
+[..]
+
+╰─$ git reset 25ba63f --hard
+HEAD is now at 25ba63f Add better description to git cherry-pick command telling about the most common case
+
+╰─$ git log --graph --oneline --decorate --all
+*   6b9564d (master) Merge branch 'git_cherry'
+|\
+| * cfd80fc (git_cherry) Add second cherry-pick example with commit range
+| * 25ba63f (HEAD -> git_reset) Add better description to git cherry-pick command telling about the most common case
+| * c03812f Add git cherry-pick command with incomplete example
+|/
+*   d1eac7d Merge branch 'git_blame'
+[..]
+
+╰─$ git reset 098ed98 --hard
+HEAD is now at 098ed98 WIP on git_reset: 6b9564d Merge branch 'git_cherry'
+```
+
 #### $ git cherry-pick
 Manual: https://git-scm.com/docs/git-cherry-pick
 Create new commits for every commit cherry-picked with the same changes. ** Important: this will create new commit hashes **
