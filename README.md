@@ -256,4 +256,43 @@ Examples:
  1 file changed, 10 insertions(+), 4 deletions(-)
 ```
 
+#### $ git stash
+Manual: https://git-scm.com/docs/git-stash
+Saves the current uncommited state with both staged and unstaged changes.
+
+Very useful for doing rebases and changing briefly to another branch without having your changes applied avoiding conflict.
+
+Examples:
+
+```shell
+╰─$ git stash
+Saved working directory and index state WIP on master: 55af855 Merge branch 'git_reset'
+HEAD is now at 55af855 Merge branch 'git_reset'
+```
+
+```shell
+╰─$ git stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+    modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (e94d87f4822879c00969b5bee468ea0ab23e9e0c)
+```
+
+```shell
+╰─$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+    modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
 ### Guidelines and best practices
