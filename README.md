@@ -210,4 +210,14 @@ Examples:
  1 file changed, 9 insertions(+)
 ```
 
+```shell
+╰─$ git cherry-pick master .. master^
+[git_cherry c03812f] Add git cherry-pick command with incomplete example
+ Date: Thu Oct 27 20:49:08 2016 -0300
+ 1 file changed, 9 insertions(+)
+[git_cherry 25ba63f] Add better description to git cherry-pick command telling about the most common case
+ Date: Thu Oct 27 20:58:58 2016 -0300
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+```
+
 ### Guidelines and best practices
