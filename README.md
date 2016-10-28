@@ -8,9 +8,9 @@
 3. [git diff](#git-diff)
 4. [git log](#git-log)
 5. [git blame](#git-blame)
-6. [git cherry-pick](#git-cherry-pick)
-7. [git stash](#git-stash)
-8. [git reset](#git-reset)
+6. [git reset](#git-reset)
+7. [git cherry-pick](#git-cherry-pick)
+8. [git stash](#git-stash)
 9. [git rebase](#git-rebase)
 10. [git reflog](#git-reflog)
 11. [git bisect](#git-bisect)
@@ -193,6 +193,31 @@ index 39651ed..dfc0bd2 100644
 +
 +
  ### Guidelines and best practices
+```
+
+#### $ git cherry-pick
+Manual: https://git-scm.com/docs/git-cherry-pick
+Create new commits for every commit cherry-picked with the same changes. ** Important: this will create new commit hashes **
+
+Most common use: You have inadvertidely created commits in the wrong branch and want to move them to the correct branch.
+
+Examples:
+
+```shell
+╰─$ git cherry-pick 700ce57bfe00196d910069c7e44cbeb59bc5524f
+[git_cherry c19ea20] Add git cherry-pick command with incomplete example
+ Date: Thu Oct 27 20:49:08 2016 -0300
+ 1 file changed, 9 insertions(+)
+```
+
+```shell
+╰─$ git cherry-pick master .. master^
+[git_cherry c03812f] Add git cherry-pick command with incomplete example
+ Date: Thu Oct 27 20:49:08 2016 -0300
+ 1 file changed, 9 insertions(+)
+[git_cherry 25ba63f] Add better description to git cherry-pick command telling about the most common case
+ Date: Thu Oct 27 20:58:58 2016 -0300
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 ```
 
 ### Guidelines and best practices
