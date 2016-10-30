@@ -17,7 +17,7 @@
 12. [git revert](#git-revert)
 
 #### $ git show
-
+Manual: https://git-scm.com/docs/git-show
 Shows information about a certain object like tags, commits branches...
 
 Examples:
@@ -43,7 +43,7 @@ index aaa2b6e..8f84011 100644
 ```
 
 #### $ git status
-
+Manual: https://git-scm.com/docs/git-status
 Show status about the current git situation, like revision differences, rebase, merge or cherry-pick states, branch names etc.
 
 Examples:
@@ -60,7 +60,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 #### $ git diff
-
+Manual: https://git-scm.com/docs/git-diff
 Shows a comparison of two different revisions. Can be used on a file, branch or two different pointers, such as branches or commits.
 
 Examples:
