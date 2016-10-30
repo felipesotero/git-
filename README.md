@@ -413,6 +413,29 @@ After `merge --no-ff`:
 
 This command avoids creating merge commits when pulling from the remote repository. If you are working in a shared branch and you and someone else makes a commit, both local branches will diverge requiring a merge commit. To avoid those, pull with `--rebase`.
 
+#### $ git reflog
+Manual: https://git-scm.com/docs/git-reflog
+
+Reflog records all commands given and the commit state by each command. It is just like log, but with a commit for each command.
+
+Reflog can save us when we think we lost a commit, deleted a wrong branch or did some confusing rebase or merge.
+
+Example:
+```shell
+╰─$ git reflog
+1ff5c49 HEAD@{0}: merge git_rebase: Merge made by the 'recursive' strategy.
+35ad907 HEAD@{1}: checkout: moving from git_rebase to master
+7f0b287 HEAD@{2}: rebase -i (finish): returning to refs/heads/git_rebase
+7f0b287 HEAD@{3}: rebase -i (fixup): Add rebase commands with examples
+f7d0aa4 HEAD@{4}: rebase -i (start): checkout HEAD~2
+0902b4a HEAD@{5}: commit: asdasd
+f7d0aa4 HEAD@{6}: checkout: moving from master to git_rebase
+35ad907 HEAD@{7}: reset: moving to 35ad907
+46db0c2 HEAD@{8}: merge git_rebase: Merge made by the 'recursive' strategy.
+```
+
+Used together with `git reset --hard` or `git checkout` we can move the HEAD pointer, restoring to a previous state or check the state on a given command.
+
 ### Guidelines and best practices
 
 - Make commits semantic, by squashing changes that make sense together
