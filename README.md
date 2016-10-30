@@ -296,3 +296,5 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ### Guidelines and best practices
+
+- Make commits semantic, by squashing changes that make sense together
