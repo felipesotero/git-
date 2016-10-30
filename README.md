@@ -385,8 +385,7 @@ If merging without rebasing:
 ```shell
 *   6752138 (HEAD -> master) Merge branch 'git_rebase'
 |\
-| * a977a9e (git_rebase) Add full example for git rebase -i
-| * fb7ecf0 Add rebase title
+| * a977a9e (git_rebase) Add rebase commands with examples
 * | 35ad907 Add first guideline and best practice
 |/
 *   41d2879 Merge branch 'manual_refactor'
