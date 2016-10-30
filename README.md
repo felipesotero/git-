@@ -295,6 +295,125 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
+#### $ git rebase
+Manual: https://git-scm.com/docs/git-rebase
+Change the history by adding a branch on top of another branch, actually it can be any set of commits on top of another set.
+
+This command is useful to remove unecessary commits after they were created, rename commits in batch, squashing and splitting commits and avoid diamond shapes in the history (merge-hell)
+
+Three most common uses of rebase:
+##### `$ git rebase -i`
+
+Example:
+```shell
+╰─$ git rebase -i HEAD~4
+
+pick 256e9db Add rebase title
+s 9c72322 add manual reference
+f cb8bc26 Add description and tips
+f a4b6be8 Add new sub titles
+
+# Rebase 41d2879..a4b6be8 onto 41d2879 (4 command(s))
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+Next step:
+```shell
+# This is a combination of 4 commits.
+# The first commit's message is:
+Add rebase title
+
+# This is the 2nd commit message:
+
+add manual reference
+
+# The 3rd commit message will be skipped:
+#   Add description and tips
+
+# The 4th commit message will be skipped:
+#   Add new sub titles
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sun Oct 30 09:55:15 2016 -0300
+#
+# rebase in progress; onto 41d2879
+# You are currently editing a commit while rebasing branch 'git_rebase' on '41d2879'.
+#
+# Changes to be committed:
+#   modified:   README.md
+#
+```
+
+When finishing:
+```shell
+╰─$ git rebase -i HEAD~4
+[detached HEAD fb7ecf0] Add rebase title
+ Date: Sun Oct 30 09:55:15 2016 -0300
+ 1 file changed, 14 insertions(+)
+Successfully rebased and updated refs/heads/git_rebase.
+```
+
+##### `$ git rebase --no-ff master`
+
+Example:
+Before `rebase --no-ff`:
+```shell
+* 35ad907 (master) Add first guideline and best practice
+| * a977a9e (HEAD -> git_rebase) Add full example for git rebase -i
+| * fb7ecf0 Add rebase title
+|/
+*   41d2879 Merge branch 'manual_refactor'
+```
+If merging without rebasing:
+```shell
+*   6752138 (HEAD -> master) Merge branch 'git_rebase'
+|\
+| * a977a9e (git_rebase) Add full example for git rebase -i
+| * fb7ecf0 Add rebase title
+* | 35ad907 Add first guideline and best practice
+|/
+*   41d2879 Merge branch 'manual_refactor'
+```
+
+After `rebase --no-ff` (before merging):
+```shell
+* aab0809 (HEAD -> git_rebase) Add full example for git rebase -i
+* aaa9b2a Add rebase title
+* 35ad907 (master) Add first guideline and best practice
+*   41d2879 Merge branch 'manual_refactor'
+```
+
+After `merge --no-ff`:
+```shell
+*   46db0c2 (HEAD -> master) Merge branch 'git_rebase'
+|\
+| * f7d0aa4 (git_rebase) Add rebase commands with examples
+|/
+* 35ad907 Add first guideline and best practice
+*   41d2879 Merge branch 'manual_refactor'
+```
+
+##### `$ git pull --rebase origin master`
+
+This command avoids creating merge commits when pulling from the remote repository. If you are working in a shared branch and you and someone else makes a commit, both local branches will diverge requiring a merge commit. To avoid those, pull with `--rebase`.
+
 ### Guidelines and best practices
 
 - Make commits semantic, by squashing changes that make sense together
