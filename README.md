@@ -494,6 +494,50 @@ Bisecting: 0 revisions left to test after this (roughly 0 steps)
 
 Used together with `git revert` we can restore the introduced errors.
 
+#### $ git revert
+Manual: https://git-scm.com/docs/git-revert
+
+Reverts one or more revisions, creating new commits for those.
+
+Example:
+```shell
+# Before revert:
+*   9e7fc7e (HEAD -> git_revert, master) Merge branch 'git_bisect'
+|\
+| * f7cc000 (git_bisect) Add git bisect command, usage and example
+|/
+*   0e86eb2 Merge branch 'git_reflog'
+[..]
+
+# Command:
+╰─$ git revert f7cc000
+[git_revert fb641c0] Revert "Add git bisect command, usage and example"
+ 1 file changed, 58 deletions(-)
+
+# Create commit for the reversion.
+--------------------------------------------------------------------
+Revert "Add git bisect command, usage and example"
+
+This reverts commit f7cc0005cbb3813b5bf274f1435cf780991a514e.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch git_revert
+# Changes to be committed:
+#   modified:   README.md
+#
+--------------------------------------------------------------------
+
+# After revert:
+* fb641c0 (HEAD -> git_revert) Revert "Add git bisect command, usage and example"
+*   9e7fc7e (master) Merge branch 'git_bisect'
+|\
+| * f7cc000 (git_bisect) Add git bisect command, usage and example
+|/
+*   0e86eb2 Merge branch 'git_reflog'
+[..]
+```
+
 ### Guidelines and best practices
 
 - Make commits semantic, by squashing changes that make sense together
