@@ -436,6 +436,64 @@ f7d0aa4 HEAD@{6}: checkout: moving from master to git_rebase
 
 Used together with `git reset --hard` or `git checkout` we can move the HEAD pointer, restoring to a previous state or check the state on a given command.
 
+
+#### $ git bisect
+Manual: https://git-scm.com/docs/git-bisect
+
+Uses a binary search algorithm to find which commit in the history introduced an undesired behaviour (commonly a bug).
+
+Git bisect works as follows:
+```shell
+╰─$ git bisect start
+╰─$ git bisect bad # if you ommit the ref, it will take the current version
+╰─$ git bisect good v2.0.1-alpha2
+```
+
+Git will change its pointer and ask you to take action, which you will do one of:
+```shell
+╰─$ git bisect good
+╰─$ git bisect bad
+```
+
+If you want to cancel:
+```shell
+╰─$ git bisect reset
+```
+
+You can pass a script for git to test:
+```shell
+╰─$ git bisect run script_name.sh args
+```
+
+Example:
+```shell
+╰─$ git bisect start
+╭─ ~/dev/git++  ‹git_bisect*›
+╰─$ git bisect bad
+╭─ ~/dev/git++  ‹git_bisect*›
+╰─$ git bisect good d1eac7dc5ef1e9642d4989b425aec6592fa31cde
+Bisecting: 7 revisions left to test after this (roughly 3 steps)
+[0b2d680df9c526cd3123f98ae34e0beb6bff11e2] Merge branch 'git_stash'
+╭─ ~/dev/git++  ‹0b2d680›
+╰─$ git bisect good
+Bisecting: 3 revisions left to test after this (roughly 2 steps)
+[7f0b287bfda3946c9d79213c05718af076a67cfb] Add rebase commands with examples
+╭─ ~/dev/git++  ‹7f0b287›
+╰─$ git bisect bad
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[41d287968dccd9b1ba29e0c4b621d819cc92588c] Merge branch 'manual_refactor'
+╭─ ~/dev/git++  ‹41d2879›
+╰─$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[35ad90764758bd603e58236da05ea60087df25cb] Add first guideline and best practice
+╭─ ~/dev/git++  ‹35ad907›
+# The hash above is the commit that introduced the problem.
+╰─$ git revert 35ad907
+[..]
+```
+
+Used together with `git revert` we can restore the introduced errors.
+
 ### Guidelines and best practices
 
 - Make commits semantic, by squashing changes that make sense together
