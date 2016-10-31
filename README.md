@@ -540,4 +540,12 @@ This reverts commit f7cc0005cbb3813b5bf274f1435cf780991a514e.
 
 ### Guidelines and best practices
 
-- Make commits semantic, by squashing changes that make sense together
+- Make commits semantic, by squashing changes that make sense together down to the minimum semantic amount.
+- Always give some contextual information on your commit messages to avoid making the reader go through a long path of the history to understand what's going on on that particular commit.
+- Don't `push --force` unless you know exactly what you are doing and try to be more explicitly as possible eg.: `git push origin my_nice_branch --force`
+- Don't rewrite public history, only do it in extreme cases and be sure everyone in your team is on the same page.
+- Linear histories are easier to be git-bisected and navigated, so keep that in mind.
+
+### Flows
+
+- Always merge with `--no-ff`. This will help keeping track of branches history.
