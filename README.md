@@ -3,18 +3,18 @@
 
 ### Git command list
 
-1. [git show](#git-show)
-2. [git status](#git-status)
-3. [git diff](#git-diff)
-4. [git log](#git-log)
-5. [git blame](#git-blame)
-6. [git reset](#git-reset)
-7. [git cherry-pick](#git-cherry-pick)
-8. [git stash](#git-stash)
-9. [git rebase](#git-rebase)
-10. [git reflog](#git-reflog)
-11. [git bisect](#git-bisect)
-12. [git revert](#git-revert)
+1. [git show](#-git-show)
+2. [git status](#-git-status)
+3. [git diff](#-git-diff)
+4. [git log](#-git-log)
+5. [git blame](#-git-blame)
+6. [git reset](#-git-reset)
+7. [git cherry-pick](#-git-cherry-pick)
+8. [git stash](#-git-stash)
+9. [git rebase](#-git-rebase)
+10. [git reflog](#-git-reflog)
+11. [git bisect](#-git-bisect)
+12. [git revert](#-git-revert)
 
 #### $ git show
 Manual: https://git-scm.com/docs/git-show
