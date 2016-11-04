@@ -18,6 +18,7 @@
 
 #### $ git show
 Manual: https://git-scm.com/docs/git-show
+
 Shows information about a certain object like tags, commits branches...
 
 Examples:
@@ -44,6 +45,7 @@ index aaa2b6e..8f84011 100644
 
 #### $ git status
 Manual: https://git-scm.com/docs/git-status
+
 Show status about the current git situation, like revision differences, rebase, merge or cherry-pick states, branch names etc.
 
 Examples:
@@ -61,6 +63,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 #### $ git diff
 Manual: https://git-scm.com/docs/git-diff
+
 Shows a comparison of two different revisions. Can be used on a file, branch or two different pointers, such as branches or commits.
 
 Examples:
@@ -73,7 +76,6 @@ index 8fbb413..d578080 100644
 +++ b/README.md
 @@ -59,7 +59,7 @@ Changes not staged for commit:
  no changes added to commit (use "git add" and/or "git commit -a")
- ```
 
 -### $ git diff
 +#### $ git diff
@@ -104,6 +106,7 @@ index e58b934..a3ff1df 100644
 #### $ git log
 
 Manual: https://git-scm.com/docs/git-log
+
 Show a list of commits with their descriptions in ancestor order
 
 Examples:
@@ -150,6 +153,7 @@ Date:   Thu Oct 27 13:40:09 2016 -0300
 
 #### $ git blame
 Manual: https://git-scm.com/docs/git-blame
+
 Shows who, when and where (in which commit) the current state of a file was modified.
 
 When commiting is done right, this command, allied with `git show` is great to understand why certain changes were made or bugs introduced.
@@ -159,7 +163,6 @@ Examples:
 ╰─$ git blame README.md
 
 [..]
-f3d79c57 (Luiz Sotero 2016-10-27 14:45:35 -0300 149) ```
 f3d79c57 (Luiz Sotero 2016-10-27 14:45:35 -0300 150)
 cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 151) #### git error
 cea8273f (Luiz Sotero 2016-10-27 15:11:11 -0300 152) This is no command at all! ERROR! ERROR!
@@ -186,7 +189,6 @@ index 39651ed..dfc0bd2 100644
 +++ b/README.md
 @@ -148,4 +148,8 @@ Date:   Thu Oct 27 13:40:09 2016 -0300
  * 3397a27 First commit
- ```
 
 +#### git error
 +This is no command at all! ERROR! ERROR!
@@ -197,6 +199,7 @@ index 39651ed..dfc0bd2 100644
 
 #### $ git reset
 Manual: https://git-scm.com/docs/git-reset
+
 Reset the current HEAD pointer to a specified state
 
 Used with `--hard` can make the branch move the HEAD pointer to any step in the tree ignoring the changes between states.
@@ -233,7 +236,8 @@ HEAD is now at 098ed98 WIP on git_reset: 6b9564d Merge branch 'git_cherry'
 
 #### $ git cherry-pick
 Manual: https://git-scm.com/docs/git-cherry-pick
-Create new commits for every commit cherry-picked with the same changes. ** Important: this will create new commit hashes **
+
+Create new commits for every commit cherry-picked with the same changes. **Important: this will create new commit hashes**
 
 Most common use: You have inadvertidely created commits in the wrong branch and want to move them to the correct branch.
 
@@ -258,6 +262,7 @@ Examples:
 
 #### $ git stash
 Manual: https://git-scm.com/docs/git-stash
+
 Saves the current uncommited state with both staged and unstaged changes.
 
 Very useful for doing rebases and changing briefly to another branch without having your changes applied avoiding conflict.
@@ -297,6 +302,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 #### $ git rebase
 Manual: https://git-scm.com/docs/git-rebase
+
 Change the history by adding a branch on top of another branch, actually it can be any set of commits on top of another set.
 
 This command is useful to remove unecessary commits after they were created, rename commits in batch, squashing and splitting commits and avoid diamond shapes in the history (merge-hell)
